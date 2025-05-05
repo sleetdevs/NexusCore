@@ -4,10 +4,10 @@ game 'gta5'
 -- Add RageUI as a dependency
 dependency 'RageUI'
 
-server_scripts {
+server_script {
+    'shared/core.lua',
     'server/main.lua',
-    'server/permissions.lua',
-    'server/config/permissions_config.lua',
+    'server/permissions.lua'
 }
 
 client_scripts {

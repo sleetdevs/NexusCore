@@ -1,9 +1,12 @@
-NexusCore = {}
+local Core = {}
 
-function Core.PrintDebug(msg)
-    print("^5[NexusCore]^0 " .. msg)
+function Core.PrintDebug(message)
+    print("[NexusCore]: " .. message)
 end
 
-exports('GetCoreObject', function()
-    return NexusCore
+-- Export Core object
+exports("GetCoreObject", function()
+    return Core
 end)
+
+return Core
