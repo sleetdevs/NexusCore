@@ -1,7 +1,5 @@
 local Core = exports['NexusCore']:GetCoreObject()
-
--- Import the permission logic
-local permissions = require('server.permissions')
+local permissions = require('server.permissions')  -- Ensure correct relative path
 
 -- Print debug when resource starts
 AddEventHandler('onResourceStart', function(resourceName)
