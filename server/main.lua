@@ -1,5 +1,8 @@
 local Core = exports['NexusCore']:GetCoreObject()
 
+-- Import the permission logic
+local permissions = require('permissions')
+
 -- Print debug when resource starts
 AddEventHandler('onResourceStart', function(resourceName)
     if resourceName == GetCurrentResourceName() then
@@ -24,13 +27,10 @@ AddEventHandler('onResourceStop', function(resourceName)
     end
 end)
 
--- Import permission logic
-local permissions = require('permissions')
-
 -- Handle menu access request
 RegisterNetEvent("NexusCore:RequestMenu", function()
     local src = source
-    if IsPlayerAceAllowed(src, "nexuscore.admin") then  -- Checking if the player has the required Ace permission
+    if permissions.IsPlayerAdmin(src) then  -- Checking if the player has the required Ace permission
         TriggerClientEvent("NexusCore:OpenMenu", src)
     else
         TriggerClientEvent("chat:addMessage", src, {
@@ -43,7 +43,7 @@ end)
 -- Handle teleportation request
 RegisterNetEvent("NexusCore:TeleportToCoords", function(x, y, z)
     local src = source
-    if IsPlayerAceAllowed(src, "nexuscore.admin") then  -- Checking Ace permission for teleportation
+    if permissions.IsPlayerAdmin(src) then  -- Checking Ace permission for teleportation
         local playerPed = GetPlayerPed(src)
         SetEntityCoords(playerPed, x, y, z, false, false, false, true)
         TriggerClientEvent("chat:addMessage", src, {
