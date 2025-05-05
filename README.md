@@ -16,7 +16,7 @@
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/NexusCore.git
+   git clone https://github.com/sleetdevs/NexusCore.git
 2. Install dependencies (will be updated soon).
 
 3. Configure NexusCore (will be updated soon).
