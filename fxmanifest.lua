@@ -1,8 +1,9 @@
 fx_version 'cerulean'
 game 'gta5'
-
--- Add RageUI as a dependency
-dependency 'RageUI'
+author 'sleetdevs'
+description 'Sleet - NexusCore Framework'
+version '1.0.0'
+lua54 'yes'
 
 server_script {
     'shared/core.lua',
@@ -17,6 +18,10 @@ client_scripts {
 
 shared_scripts {
     'shared/core.lua',
+}
+
+dependencies {
+    'RageUI',  -- If you are using RageUI, make sure this is listed as a dependency
 }
 
 -- Export Core Object (if you haven't already done so)
